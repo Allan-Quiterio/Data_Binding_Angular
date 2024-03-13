@@ -20,24 +20,29 @@
     <div>
       <h3>Class e Style Binding</h3>
       <p>Selecione uma classe:</p>
-      <select #classe (change)="0">
-        <option value="callout-info">Sucesso</option>
-        <option value="callout-warning">Cuidado</option>
-        <option value="callout-danger">Perigo</option>
+      <!-- #classe é uma variável local, que será usada para obter os valores das opções que estão sendo selecionadas -->
+      <select #classe (change)="0"> <!-- (change) é um evento de mudança que está sendo escutado, similar ao AddEventListener-->
+        <option value="alert-success">Sucesso</option>
+        <option value="alert-warning">Cuidado</option>
+        <option value="alert-info">Informações</option>
+        <option value="alert-danger">Perigo</option>
       </select>
 
       <br><br>
 
       <!-- Uma forma utilizando a interpolação de classe -->
-      <p class="callout {{ classe.value }}">Texto colorido conforme o valor do combobox</p>
+      <p class="alert {{ classe.value }}" role="alert">Texto colorido conforme o valor do combobox</p>
 
       <!-- Outra forma utilizando o Class Binding -->
-      <div class="callout" [class.callout-info]="classe.value === 'callout-info'">Sucesso</div>
-      <div class="callout" [class.callout-warning]="classe.value === 'callout-warning'">Cuidado</div>
-      <div class=" callout" [class.callout-danger]="classe.value === 'callout-danger'">Perigo</div>
+      <div class="alert" role="alert" [class.alert-success]="classe.value === 'alert-success'"> <!-- Aqui ele está verificando se o valor da classe lá de cima (que foi selecionado) for igual ao alert-success, ele aplica a classe: class.alert-success (que seria o css)-->
+        Sucesso
+      </div>
+      <div class="alert" role="alert" [class.alert-warning]="classe.value === 'alert-warning'">Cuidado</div>
+      <div class="alert " role="alert" [class.alert-info]="classe.value === 'alert-info'">Informações</div>
+      <div class="alert " role="alert" [class.alert-danger]="classe.value === 'alert-danger'">Perigo</div>
 
       <!-- Style Binding [propriedade css para ser alterada]-->
-      <div class="callout callout-danger" [style.display]="classe.value === 'callout-danger' ? 'block' : 'none'">Esse texto somente aparece em caso de erro." </div>
+      <div class="alert alert-danger" [style.display]="classe.value === 'alert-danger' ? 'block' : 'none'">Esse texto somente aparece em caso de erro.</div>
     </div>
   </article>
 </section>
