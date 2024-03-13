@@ -1,16 +1,43 @@
 <section class="property-binding">
+  <!--
   <article>
     <h3>Interpolação/Interpolation</h3>
     <p>String renderizada por interpolação: {{ url }}</p>
     <p>Resultado de 1 + 1 = {{ 1 + 1}}</p>
     <p>Resultado de 1 + 1 não é {{ 1 + 1 + getValor()}}</p>
     <p>Curso de Angular e gosto do curso {{ cursoAngular && getCurtirCurso() }}</p>
-  </article>
+  </article> -->
 
+  <!--
   <article>
     <h3>Property Binding</h3>
     <img [src]="urlImage">
-    <!-- Isso é a mesma coisa do de cima, é o que a sintaxe a cima faz por baixo dos panos, uma forma menor de declarar o bind-->
+    //Isso é a mesma coisa do de cima, é o que a sintaxe a cima faz por baixo dos panos, uma forma menor de declarar o bind
     <img bind-src="urlImage">
+  </article>-->
+
+  <article>
+    <div>
+      <h3>Class e Style Binding</h3>
+      <p>Selecione uma classe:</p>
+      <select #classe (change)="0">
+        <option value="callout-info">Sucesso</option>
+        <option value="callout-warning">Cuidado</option>
+        <option value="callout-danger">Perigo</option>
+      </select>
+
+      <br><br>
+
+      <!-- Uma forma utilizando a interpolação de classe -->
+      <p class="callout {{ classe.value }}">Texto colorido conforme o valor do combobox</p>
+
+      <!-- Outra forma utilizando o Class Binding -->
+      <div class="callout" [class.callout-info]="classe.value === 'callout-info'">Sucesso</div>
+      <div class="callout" [class.callout-warning]="classe.value === 'callout-warning'">Cuidado</div>
+      <div class=" callout" [class.callout-danger]="classe.value === 'callout-danger'">Perigo</div>
+
+      <!-- Style Binding [propriedade css para ser alterada]-->
+      <div class="callout callout-danger" [style.display]="classe.value === 'callout-danger' ? 'block' : 'none'">Esse texto somente aparece em caso de erro." </div>
+    </div>
   </article>
 </section>
