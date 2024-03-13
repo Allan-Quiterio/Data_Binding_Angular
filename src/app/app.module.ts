@@ -4,17 +4,13 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DataBindingComponent } from './data-binding/data-binding.component';
+import { FormsModule } from '@angular/forms';
+import { MeuFormModule } from './meu-form/meu-form.module';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    DataBindingComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  declarations: [AppComponent, DataBindingComponent],
+  imports: [FormsModule, BrowserModule, AppRoutingModule, MeuFormModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

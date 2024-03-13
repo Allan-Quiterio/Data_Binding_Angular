@@ -47,10 +47,11 @@
     </div>
   </article>-->
 
+  <!--
   <article class="event-binding">
     <h3>Event Binding</h3>
     <div>
-      <!-- O evento vai dentro dos () e a ação/método a ser realizado vai nos "", nesse caso o método vem do nosso component, por baixo dos panos o (click) vira on-click -->
+      // O evento vai dentro dos () e a ação/método a ser realizado vai nos "", nesse caso o método vem do nosso component, por baixo dos panos o (click) vira on-click
       <button class="btn btn-primary" (click)="botaoClicado()">
         Clique aqui
       </button>
@@ -58,8 +59,8 @@
 
     <br /><br />
 
-    <!-- $event.target.value é uma forma de obter o valor que está sendo digitado -->
-    <!-- Criar uma variável local através do # também é uma forma de obter o valor do que está sendo digitado -->
+    // $event.target.value é uma forma de obter o valor que está sendo digitado
+    // Criar uma variável local através do # também é uma forma de obter o valor do que está sendo digitado
     <input
       type="text"
       (keyup)="onKeyUp($event)"
@@ -73,7 +74,7 @@
 
     <br /><br />
 
-    <!-- Criando uma classe highlight para aplicar o valor booleano isMouseOver, e essa classe highlight está sendo estilizada lá no componente -->
+    // Criando uma classe highlight para aplicar o valor booleano isMouseOver, e essa classe highlight está sendo estilizada lá no componente
     <span
       (mouseover)="onMouseOverOut()"
       (mouseout)="onMouseOverOut()"
@@ -81,5 +82,7 @@
     >
       Passe o mouse sobre mim.
     </span>
-  </article>
+  </article>-->
+
+  <app-meu-form></app-meu-form>
 </section>

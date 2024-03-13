@@ -1,0 +1,24 @@
+<article>
+  <h3>Two-way data binding</h3>
+  <div>
+    <!-- Isso seria o Two-way data binding, a passagem tanto do componente para o template [], quanto do template para o componente (evento.value) -->
+    <input type="text" [value]="nome" (input)="nome = evento.value" #evento />
+
+    <!-- Isso também é um two-way data binding, porém mais resumido através do [()] ou seja, a junção do property binding com o event binding -->
+    <input type="text" [(ngModel)]="nome" />
+
+    <!-- Por baixo dos panos, o Angular executa isso -->
+    <input type="text" bindon-ngModel="nome" />
+    <p>Você digitou: {{ nome }}</p>
+
+    <div style="margin-top: 20px">
+      <input type="text" [(ngModel)]="pessoa.nome" />
+      <input type="text" [(ngModel)]="pessoa.sobrenome" />
+      <input type="text" [(ngModel)]="pessoa.idade" />
+    </div>
+    <p>
+      Meu nome é {{ pessoa.nome }} {{ pessoa.sobrenome }} e tenho
+      {{ pessoa.idade }} anos
+    </p>
+  </div>
+</article>
