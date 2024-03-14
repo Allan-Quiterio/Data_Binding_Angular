@@ -1,1 +1,8 @@
-<app-data-binding></app-data-binding>
+<!-- <app-data-binding></app-data-binding> -->
+
+<!-- Aqui é utilizado uma diretiva ngIf que nesse caso mostra o componente mediante uma ação, se o deletarCiclo é true ou false -->
+<app-ciclo-vida [valorInicial]="valor" *ngIf="!deletarCiclo"></app-ciclo-vida>
+
+<!-- Nesse caso ao fazer essa mudança através do click, ele vai dar início ao onChanges em diante, pois o componente está mudando de valor -->
+<button (click)="mudarValor()">Mudar Valor</button>
+<button (click)="destruirCiclo()">Deletar</button>

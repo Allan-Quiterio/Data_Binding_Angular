@@ -8,9 +8,10 @@ import { FormsModule } from '@angular/forms';
 import { MeuFormModule } from './meu-form/meu-form.module';
 import { InputPropertyComponent } from './input-property/input-property.component';
 import { OutputPropertyComponent } from './output-property/output-property.component';
+import { CicloVidaComponent } from './ciclo-vida/ciclo-vida.component';
 
 @NgModule({
-  declarations: [AppComponent, DataBindingComponent, InputPropertyComponent, OutputPropertyComponent],
+  declarations: [AppComponent, DataBindingComponent, InputPropertyComponent, OutputPropertyComponent, CicloVidaComponent],
   imports: [FormsModule, BrowserModule, AppRoutingModule, MeuFormModule],
   providers: [],
   bootstrap: [AppComponent],
