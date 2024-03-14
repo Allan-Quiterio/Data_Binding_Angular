@@ -90,5 +90,9 @@
     <h3>Input/Output properties</h3>
 
     <app-curso [nome]="nomeDoCurso"></app-curso>
+
+    <!--Quando está passando um valor hard code não é necessário os [ ]-->
+    <contador valorInicial="0" (mudouValor)="onMudouValor($event)"></contador>
+    <!-- <contador [valorInicial]="valorInicial"></contador> Porém quando é passado o valor como uma variável, aí é necessário a forma do property binding [ ] -->
   </article>
 </section>
